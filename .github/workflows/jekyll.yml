@@ -16,9 +16,11 @@ jobs:
       run: curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash      
 
     - name: Build the site in the jekyll/builder container
+      env:
+        passwd: ${{ secrets.PASSWD}}
        
       run: |-
-        echo ${{ secrets.PASSWD}}
+        echo "$passwd"
         helm repo add  mizen  https://${{ secrets.TOKEN }}@raw.githubusercontent.com/slamani/helm-chart/master/infra-helm-chart --username slamani ${{ secrets.PASSWD}} ${{ secrets.PASSWORD}} 
       
 
