@@ -17,7 +17,7 @@ jobs:
       run: curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash      
 
     - name: Build the site in the jekyll/builder container   
-      run: helm repo add  mizen-repository https://60ca016c7f9113ebc0824a75cd53a5b66508ee46@raw.githubusercontent.com/Mizenek/helm-registry/master/infra-helm-chart --username wa8eb --password password
+      run: helm repo add  mizen-repository https://60ca016c7f9113ebc0824a75cd53a5b66508ee46@raw.githubusercontent.com/Mizenek/helm-registry/master/infra-helm-chart --username wa8eb --password
 
       
 
