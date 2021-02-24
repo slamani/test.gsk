@@ -5,8 +5,10 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+
 env:
-  helm: "helm repo add mizen  https://${{ secrets.TOKEN }}@raw.githubusercontent.com/slamani/helm-chart/master/infra-helm-chart --username slamani --password test
+  helm: "helm repo add mizen  https://${{ secrets.TOKEN }}@raw.githubusercontent.com/slamani/helm-chart/master/infra-helm-chart --username slamani --password test"
+
 jobs:
   build:
 
