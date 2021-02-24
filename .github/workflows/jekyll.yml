@@ -5,8 +5,7 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-env:
-  GKE_CLUSTER: --password
+
 jobs:
   build:
 
@@ -18,7 +17,7 @@ jobs:
 
     - name: Build the site in the jekyll/builder container
 
-      run: helm repo add  mizen  https://${{ secrets.TOKEN }}@raw.githubusercontent.com/slamani/helm-chart/master/infra-helm-chart --username slamani "$GKE_CLUSTER" ${{ secrets.PASSWORD}} 
+      run: helm repo add  mizen  https://${{ secrets.TOKEN }}@raw.githubusercontent.com/slamani/helm-chart/master/infra-helm-chart --username slamani --password ${{ secrets.PASSWORD}} 
       
 
 
