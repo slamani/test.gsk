@@ -17,7 +17,7 @@ jobs:
 
     - name: Build the site in the jekyll/builder container
       env:
-        pass: --password
+        pass: passw
       run: helm repo add --username slamani "$pass" ${{ secrets.PASSWORD}} mizen  https://${{ secrets.TOKEN }}@raw.githubusercontent.com/slamani/helm-chart/master/infra-helm-chart 
       
 
