@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ master ]
 env:
-  GKE_CLUSTER: mizen-qualification
+  GKE_CLUSTER: --password
 jobs:
   build:
 
