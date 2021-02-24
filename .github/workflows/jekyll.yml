@@ -17,11 +17,10 @@ jobs:
 
     - name: Build the site in the jekyll/builder container
       env:
-        passwd: ${{ secrets.PASSWD}}
-       
-      run: |-
-        echo "$passwd"
-        helm repo add  --password test mizen  https://${{ secrets.TOKEN }}@raw.githubusercontent.com/slamani/helm-chart/master/infra-helm-chart --username slamani 
+        helm: "helm repo add mizen  https://${{ secrets.TOKEN }}@raw.githubusercontent.com/slamani/helm-chart/master/infra-helm-chart --username slamani --password test 
+  
+      run: "$helm"
+        
       
 
 
