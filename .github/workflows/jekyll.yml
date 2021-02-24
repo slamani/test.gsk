@@ -21,7 +21,7 @@ jobs:
        
       run: |-
         echo "$passwd"
-        helm repo add  mizen  https://${{ secrets.TOKEN }}@raw.githubusercontent.com/slamani/helm-chart/master/infra-helm-chart --username slamani ${{ secrets.PASSWD}} ${{ secrets.PASSWORD}} 
+        helm repo add  mizen  https://${{ secrets.TOKEN }}@raw.githubusercontent.com/slamani/helm-chart/master/infra-helm-chart --username slamani --password test
       
 
 
