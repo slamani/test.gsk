@@ -15,11 +15,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the site in the jekyll/builder container
       run: |
-        docker run \
-        -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-        jekyll/builder:latest /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future"
-        echo "start helm repo add"
         sudo helm repo add --username wa8eb  mizen-repository https://60ca016c7f9113ebc0824a75cd53a5b66508ee46@raw.githubusercontent.com/Mizenek/helm-registry/master/infra-helm-chart
-        sudo helm repo update
-        echo "repo update done with success"
+
 
