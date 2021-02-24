@@ -12,7 +12,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
     - name: Build the site in the jekyll/builder container
       run: |
         sudo helm repo add  mizen-repository https://60ca016c7f9113ebc0824a75cd53a5b66508ee46@raw.githubusercontent.com/Mizenek/helm-registry/master/infra-helm-chart
