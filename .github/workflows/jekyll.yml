@@ -7,10 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
+  jobs:
     steps:
     - name: Build the site in the jekyll/builder container   
       uses: WyriHaximus/github-action-helm3@v2
