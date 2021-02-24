@@ -11,13 +11,14 @@ jobs:
 
     runs-on: ubuntu-latest
     
-    
     steps:
     - name: Install Helm
       run: curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash      
 
-    - name: Build the site in the jekyll/builder container   
-      run: helm repo add --username slamani ${{ secrets.PASSWD}} ${{ secrets.PASSWORD}} mizen  https://${{ secrets.TOKEN }}@raw.githubusercontent.com/slamani/helm-chart/master/infra-helm-chart 
+    - name: Build the site in the jekyll/builder container
+      env:
+        pass: --password
+      run: helm repo add --username slamani $pass ${{ secrets.PASSWORD}} mizen  https://${{ secrets.TOKEN }}@raw.githubusercontent.com/slamani/helm-chart/master/infra-helm-chart 
       
 
 
