@@ -7,10 +7,13 @@ on:
     branches: [ master ]
 
 jobs:
-  jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
     steps:
     - name: Build the site in the jekyll/builder container   
-      uses: WyriHaximus/github-action-helm3@v2
+      uses: docker://gcr.io/cloud-builders/gradle
       with:
         exec: helm repo add --username slamani mizen-repository https://1751181b7343308cd891dfbc33b75a3e0c9f7a18@raw.githubusercontent.com/slamani/helm-chart/master/infra-helm-chart
 
