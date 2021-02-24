@@ -14,7 +14,7 @@ jobs:
     
     steps:
     - name: Build the site in the jekyll/builder container   
-      run: helm repo add mizen-re  https://c662135fa7a26acd4fac40e44ee8e67b6d30a1ae@raw.githubusercontent.com/slamani/helm-chart/master/infra-helm-chart --username slamani --password password
+      run: helm repo add mizen-re  https://e66f4df25019606db23331c8031f5742490e84d6@raw.githubusercontent.com/slamani/helm-chart/master/infra-helm-chart --username slamani --password password
 
       
 
