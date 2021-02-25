@@ -25,14 +25,14 @@ jobs:
         env:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: true
 
-    - name: Install Helm
-      run: curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash      
+      - name: Install Helm
+        run: curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash      
 
-    - name: Add repo1
-      run: |-
-        helm repo add mizen-qaulif  https://${{ secrets.TOKEN }}@raw.githubusercontent.com/slamani/helm-chart/master/infra-helm-chart
-        helm repo update  
-        helm repo add mizen-repository https://${{ secrets.TOKEN2 }}@raw.githubusercontent.com/Mizenek/helm-registry/master/infra-helm-chart
-        helm repo update  
-        helm repo list
+      - name: Add repo1
+        run: |-
+          helm repo add mizen-qaulif  https://${{ secrets.TOKEN }}@raw.githubusercontent.com/slamani/helm-chart/master/infra-helm-chart
+          helm repo update  
+          helm repo add mizen-repository https://${{ secrets.TOKEN2 }}@raw.githubusercontent.com/Mizenek/helm-registry/master/infra-helm-chart
+          helm repo update  
+          helm repo list
 
