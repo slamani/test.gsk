@@ -8,12 +8,23 @@ on:
 jobs:
   build:
     runs-on: ubuntu-20.04
-    
+    needs: docker
+    if: ${{ github.ref == 'refs/heads/master' }}
     steps:
-    
-    - uses: GoogleCloudPlatform/github-actions/setup-gcloud@0.1.3
-      env:
+      - uses: actions/checkout@v2
+
+      - name: Prepare image tag
+        id: vars
+        shell: bash
+        run: |
+          echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+      - uses: GoogleCloudPlatform/github-actions/setup-gcloud@0.1.3
+        with:
+          service_account_key: test
+          project_id: test
+        env:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+
     - name: Install Helm
       run: curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash      
 
