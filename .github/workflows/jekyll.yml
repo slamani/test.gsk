@@ -19,4 +19,5 @@ jobs:
         helm repo update  
         helm repo add mizen  https://${{ secrets.TOKEN2 }}@raw.githubusercontent.com/Mizenek/helm-registry/master/infra-helm-chart
         helm repo update  
+        helm repo list
 
