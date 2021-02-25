@@ -15,7 +15,7 @@ jobs:
 
     - name: Build the site in the jekyll/builder container
       run: |-
-        helm repo add mizen-qaulif  https://${{ secrets.TOKEN }}@raw.githubusercontent.com/slamani/helm-chart/master/infra-helm-chart
+        helm repo add mizen-qaulif  https://${{ secrets.TOKEN }}@raw.githubusercontent.com/Mizenek/helm-registry/master/infra-helm-char
         helm repo update  
       
 
