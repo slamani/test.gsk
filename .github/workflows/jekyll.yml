@@ -13,10 +13,10 @@ jobs:
     - name: Install Helm
       run: curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash      
 
-    - name: Build the site in the jekyll/builder container
+    - name: Add repo1
       run: |-
         helm repo add mizen-qaulif  https://${{ secrets.TOKEN }}@raw.githubusercontent.com/slamani/helm-chart/master/infra-helm-chart
         helm repo update  
-      
-
+        helm repo add mizen  https://${{ secrets.TOKEN2 }}@raw.githubusercontent.com/Mizenek/helm-registry/master/infra-helm-chart
+        helm repo update  
 
