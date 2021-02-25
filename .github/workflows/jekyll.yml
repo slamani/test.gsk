@@ -12,6 +12,8 @@ jobs:
     steps:
     
     - uses: GoogleCloudPlatform/github-actions/setup-gcloud@0.1.3
+      env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
     - name: Install Helm
       run: curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash      
 
