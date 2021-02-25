@@ -8,8 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-20.04
-    needs: docker
-    if: ${{ github.ref == 'refs/heads/master' }}
+
     steps:
       - uses: actions/checkout@v2
       - uses: GoogleCloudPlatform/github-actions/setup-gcloud@0.1.3
